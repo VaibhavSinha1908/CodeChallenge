@@ -1,0 +1,68 @@
+{
+  "format": 1,
+  "restore": {
+    "D:\\Udemy Courses and Tutorials\\Dot Net Core\\CodeTask\\CodeTask.API\\CodeTask.API.csproj": {}
+  },
+  "projects": {
+    "D:\\Udemy Courses and Tutorials\\Dot Net Core\\CodeTask\\CodeTask.API\\CodeTask.API.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Udemy Courses and Tutorials\\Dot Net Core\\CodeTask\\CodeTask.API\\CodeTask.API.csproj",
+        "projectName": "CodeTask.API",
+        "projectPath": "D:\\Udemy Courses and Tutorials\\Dot Net Core\\CodeTask\\CodeTask.API\\CodeTask.API.csproj",
+        "packagesPath": "C:\\Users\\vaibhav\\.nuget\\packages\\",
+        "outputPath": "D:\\Udemy Courses and Tutorials\\Dot Net Core\\CodeTask\\CodeTask.API\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\vaibhav\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net461"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net461": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net461": {
+          "dependencies": {
+            "Microsoft.AspNetCore": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.AspNetCore.HttpsPolicy": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.AspNetCore.Mvc": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            }
+          }
+        }
+      },
+      "runtimes": {
+        "win7-x86": {
+          "#import": []
+        }
+      }
+    }
+  }
+}
