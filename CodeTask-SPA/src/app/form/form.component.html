@@ -1,2 +1,36 @@
-<i class="fa-pencil" title="Edit"></i>
+<p class="col-sm-6 offset-sm-3 font-weight-bolder">Enter details</p>
+<div class="col-sm-6 offset-sm-3 border rounded" style="padding:40px" >
+<form >
+  <div class="form-group">
+    <label for="Name">Name</label>
+    <input type="text" class="form-control " id="nameText" placeholder="Type in your name">
+  </div>
+  <div class="form-group">
+    <label for="DateOfBirth">Date of Birth</label>
+    <input type="text" class="form-control" id="dobInputText" placeholder="Select your Date of birth">
+  </div>
+  <div class="form-group">
+    <label for="SumInsured">Death - Sum Insured</label>
+    <input type="text" class="form-control" id="sumInsuredText" placeholder="In AUD">
+  </div>
+  <div class="form-group">
+    <label for="Occupation">Select Your Occupation</label>
+    <select class="form-control" id="occupationSelect">
+      <option>Select</option>
+      <option>Cleaner</option>
+      <option>Doctor</option>
+      <option>Author</option>
+      <option>Farmer</option>
+      <option>Mechanic</option>
+      <option>Florist</option>
+    </select>
+  </div>
 
+  <div class="form-group">
+    <label for="Name">Expected Premium</label>
+    <input type="text" class="form-control" id="nameText" readonly="true" placeholder="Premium to pay...">
+  </div>
+
+  <button class="btn btn-success hide" >Click here to apply</button> <!--Assumption#1-->
+</form>
+</div>
