@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CodeTask.API.Controllers
@@ -10,36 +7,24 @@ namespace CodeTask.API.Controllers
     [ApiController]
     public class ValuesController : ControllerBase
     {
+        private readonly IHostingEnvironment env;
+
+        public ValuesController(IHostingEnvironment env)
+        {
+            this.env = env;
+        }
         // GET api/values
+
         [HttpGet]
-        public ActionResult<IEnumerable<string>> Get()
+        public ActionResult Get()
         {
-            return new string[] { "value1", "value2" };
+
+            var contentRootPath = env.ContentRootPath;
+            var jsonFilePath = System.IO.Path.Combine(contentRootPath, "App_Data\\resx.json");
+            var jsonObject = System.IO.File.ReadAllText(jsonFilePath);
+            return Ok(jsonObject);
+
         }
 
-        // GET api/values/5
-        [HttpGet("{id}")]
-        public ActionResult<string> Get(int id)
-        {
-            return "value";
-        }
-
-        // POST api/values
-        [HttpPost]
-        public void Post([FromBody] string value)
-        {
-        }
-
-        // PUT api/values/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
-        {
-        }
-
-        // DELETE api/values/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
-        {
-        }
     }
 }

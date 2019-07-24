@@ -1,7 +1,7 @@
 <p class="col-sm-6 offset-sm-3 font-weight-bolder">Enter details</p>
 <hr>
 <div class="col-sm-6 offset-sm-3 border rounded" style="padding:40px" >
-<form [formGroup]="registerForm" >
+<form [formGroup]="registerForm">
   
   <div class="form-group">
     <label for="name">Name</label>
@@ -29,7 +29,7 @@
   
   <div class="form-group">
     <label for="DateOfBirth">Date of Birth</label>
-    <input type="text" 
+    <input type="date" 
     [ngClass]="{'is-invalid' : registerForm.get('dateOfBirth').errors && registerForm.get('dateOfBirth').touched}"
     class="form-control"  formControlName="dateOfBirth" placeholder="Select your Date of birth">
     <div 
@@ -39,7 +39,7 @@
   </div>
   
   <div class="form-group">
-    <label for="SumInsured">Death - Sum Insured</label>
+    <label for="SumInsured">Death - Sum Insured (In A$)</label>
     <input type="text" 
     [ngClass]="{'is-invalid' : registerForm.get('sumInsured').errors && registerForm.get('sumInsured').touched}"
     class="form-control" formControlName="sumInsured" placeholder="In AUD">
@@ -70,26 +70,17 @@
     <select class="form-control" 
     [ngClass]="{'is-invalid' : registerForm.get('occupation').errors && registerForm.get('occupation').touched}"
     formControlName="occupation" (change)="dropdownChange($event.target.value)">
-        <option></option>
-        <option>Cleaner</option>
-        <option>Doctor</option>
-        <option>Author</option>
-        <option>Farmer</option>
-        <option>Mechanic</option>
-        <option>Florist</option>
+      <option></option>
+      <option *ngFor="let item of dropDownModel">{{item.name}}</option>
     </select>
     <div class="invalid-feedback">Please select a valid occupation</div>
   </div>
 
   <div class="form-group">
-    <label for="Name">Expected Premium</label>
-    <input type="text" class="form-control" id="calculatedPremium" readonly="true" placeholder="Premium to pay...">
+    <label for="Name">Expected Premium (In A$)</label>
+    <input type="text" class="form-control" id="calculatedPremium" readonly="true" formControlName="premimumAmt" placeholder="Premium to pay...">
   </div>
-
-  <button class="btn btn-success" >Click here to apply</button> <!--Assumption#1-->
+  <button class="btn btn-success" [disabled]="!registerForm.valid" >Click here to apply</button> <!--Assumption#1-->
 </form>
 </div>
 
-<p class="text text-danger">Remember to remove!!!</p>
-<p>Form Value: {{registerForm.value | json}}</p>
-<p>Form staus: {{registerForm.status | json}}</p>
