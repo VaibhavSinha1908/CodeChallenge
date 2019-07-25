@@ -18,15 +18,24 @@ namespace CodeTask.API.Services
         {
             response = new PremiumCalculationResponse();
         }
+
+
+        /// <summary>
+        /// Calculates the Premium using the formula.
+        /// </summary>
+        /// <param name="request"></param>
+        /// <param name="env"></param>
+        /// <returns></returns>
         public PremiumCalculationResponse Calculate(PremiumCalculationRequest request, IHostingEnvironment env)
         {
 
             //Get Age
             request.age = GetYears(request.dateOfBirth);
 
-
             //Get rating from occupation.
             request.Rating = GetRating(request.Occupation, env);
+
+            //Get Factor from Rating.
             request.Factor = GetFactor(request.Rating, env);
             response.PremiumValue = CalculatePremium(request.age, request.sumIssured, request.Factor);
             response.userName = request.userName;
@@ -40,19 +49,23 @@ namespace CodeTask.API.Services
 
         private decimal GetFactor(string rating, IHostingEnvironment env)
         {
-            var contentRootPath = env.ContentRootPath;
-            var jsonFilePath = System.IO.Path.Combine(contentRootPath, "App_Data\\ratingmap.json");
-            var jsonObject = System.IO.File.ReadAllText(jsonFilePath);
+            string jsonObject = GetJsonData(env, "App_Data\\ratingmap.json");
             var ratings = JsonConvert.DeserializeObject<RatingRoot>(jsonObject);
             var factor = Convert.ToDecimal(ratings.occupationRating.SingleOrDefault(x => x.rating == rating).factor);
             return factor;
         }
 
-        private string GetRating(string occupation, IHostingEnvironment env)
+        private static string GetJsonData(IHostingEnvironment env, string path)
         {
             var contentRootPath = env.ContentRootPath;
-            var jsonFilePath = System.IO.Path.Combine(contentRootPath, "App_Data\\resx.json");
+            var jsonFilePath = System.IO.Path.Combine(contentRootPath, path);
             var jsonObject = System.IO.File.ReadAllText(jsonFilePath);
+            return jsonObject;
+        }
+
+        private string GetRating(string occupation, IHostingEnvironment env)
+        {
+            string jsonObject = GetJsonData(env, "App_Data\\resx.json");
             var occupations = JsonConvert.DeserializeObject<OccupationRoot>(jsonObject);
             var rating = occupations.occupationList.SingleOrDefault(x => x.name == occupation).rating;
             return rating;

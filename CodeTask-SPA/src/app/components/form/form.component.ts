@@ -51,7 +51,7 @@ export class FormComponent implements OnInit {
 
 
   dropdownChange = ( values: any) => {
-   console.log(this.registerForm.value);
+   if (this.registerForm.valid) {
     this.authservice.calculatePremium(this.registerForm.value)
           .subscribe(data => {
           this.registerForm.patchValue({
@@ -59,6 +59,7 @@ export class FormComponent implements OnInit {
         });
     });
   }
+}
 }
 
 
