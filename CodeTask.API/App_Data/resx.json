@@ -1,0 +1,35 @@
+{
+  "occupationList": [
+
+    {
+      "id": 1,
+      "name": "Cleaner",
+      "rating": "LightManual"
+    },
+    {
+      "id": 2,
+      "name": "Doctor",
+      "rating": "Professional"
+    },
+    {
+      "id": 3,
+      "name": "Author",
+      "rating": "WhiteCollar"
+    },
+    {
+      "id": 4,
+      "name": "Farmer",
+      "rating": "HeavyManual"
+    },
+    {
+      "id": 5,
+      "name": "Mechanic",
+      "rating": "HeavyManual"
+    },
+    {
+      "id": 6,
+      "name": "Florist",
+      "rating": "LightManual"
+    }
+  ]
+}  

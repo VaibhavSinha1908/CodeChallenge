@@ -1,0 +1,25 @@
+
+  {
+    "occupationRating": [
+      {
+        "rating": "Professional",
+        "factor": "1.0"
+      },
+      {
+        "rating": "WhiteCollar",
+        "factor": "1.25"
+      },
+      {
+        "rating": "LightManual",
+        "factor": "1.50"
+      },
+      {
+        "rating": "HeavyManual",
+        "factor": "1.75"
+      }
+    ]
+
+  }
+
+
+

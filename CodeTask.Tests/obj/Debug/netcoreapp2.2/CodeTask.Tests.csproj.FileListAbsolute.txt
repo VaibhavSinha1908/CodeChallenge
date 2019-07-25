@@ -1,0 +1,14 @@
+D:\Udemy Courses and Tutorials\Dot Net Core\CodeChallenge\CodeTask.Tests\bin\Debug\netcoreapp2.2\NUnit3.TestAdapter.dll
+D:\Udemy Courses and Tutorials\Dot Net Core\CodeChallenge\CodeTask.Tests\bin\Debug\netcoreapp2.2\NUnit3.TestAdapter.pdb
+D:\Udemy Courses and Tutorials\Dot Net Core\CodeChallenge\CodeTask.Tests\bin\Debug\netcoreapp2.2\nunit.engine.netstandard.dll
+D:\Udemy Courses and Tutorials\Dot Net Core\CodeChallenge\CodeTask.Tests\bin\Debug\netcoreapp2.2\CodeTask.Tests.deps.json
+D:\Udemy Courses and Tutorials\Dot Net Core\CodeChallenge\CodeTask.Tests\bin\Debug\netcoreapp2.2\CodeTask.Tests.runtimeconfig.json
+D:\Udemy Courses and Tutorials\Dot Net Core\CodeChallenge\CodeTask.Tests\bin\Debug\netcoreapp2.2\CodeTask.Tests.runtimeconfig.dev.json
+D:\Udemy Courses and Tutorials\Dot Net Core\CodeChallenge\CodeTask.Tests\bin\Debug\netcoreapp2.2\CodeTask.Tests.dll
+D:\Udemy Courses and Tutorials\Dot Net Core\CodeChallenge\CodeTask.Tests\bin\Debug\netcoreapp2.2\CodeTask.Tests.pdb
+D:\Udemy Courses and Tutorials\Dot Net Core\CodeChallenge\CodeTask.Tests\obj\Debug\netcoreapp2.2\CodeTask.Tests.csprojAssemblyReference.cache
+D:\Udemy Courses and Tutorials\Dot Net Core\CodeChallenge\CodeTask.Tests\obj\Debug\netcoreapp2.2\CodeTask.Tests.csproj.CoreCompileInputs.cache
+D:\Udemy Courses and Tutorials\Dot Net Core\CodeChallenge\CodeTask.Tests\obj\Debug\netcoreapp2.2\CodeTask.Tests.AssemblyInfoInputs.cache
+D:\Udemy Courses and Tutorials\Dot Net Core\CodeChallenge\CodeTask.Tests\obj\Debug\netcoreapp2.2\CodeTask.Tests.AssemblyInfo.cs
+D:\Udemy Courses and Tutorials\Dot Net Core\CodeChallenge\CodeTask.Tests\obj\Debug\netcoreapp2.2\CodeTask.Tests.dll
+D:\Udemy Courses and Tutorials\Dot Net Core\CodeChallenge\CodeTask.Tests\obj\Debug\netcoreapp2.2\CodeTask.Tests.pdb
