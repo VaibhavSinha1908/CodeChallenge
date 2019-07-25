@@ -49,7 +49,7 @@ Unit test coverage is work in progress.
 Work in progress Items
 ---------------------
 The application is in MVP state and some essential aspects are still in development. They are:
-    - Service Layer's Unit testing is work in progress.
-    - Date of birth field's validation for invalid dates is in progress.
-    - Sanitization of the UI layer to stop XSS attacks is in progress.
-    - Code refactoring on Web API is in progress.
+ - Service Layer's Unit testing is work in progress.
+ - Date of birth field's validation for invalid dates is in progress.
+ - Sanitization of the UI layer to stop XSS attacks is in progress.
+ - Code refactoring on Web API is in progress.
