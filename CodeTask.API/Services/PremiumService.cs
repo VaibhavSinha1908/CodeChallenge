@@ -9,6 +9,14 @@ namespace CodeTask.API.Services
     public interface IPremiumService
     {
         PremiumCalculationResponse Calculate(PremiumCalculationRequest request, IHostingEnvironment env);
+        decimal CalculatePremium(int age, string sumIssured, decimal factor);
+        decimal GetFactor(string rating, IHostingEnvironment env);
+
+        string GetJsonData(IHostingEnvironment env, string path);
+        string GetRating(string occupation, IHostingEnvironment env);
+        int GetYears(string dob);
+
+
     }
 
     public class PremiumService : IPremiumService
@@ -42,12 +50,16 @@ namespace CodeTask.API.Services
             return response;
         }
 
-        private decimal CalculatePremium(int age, string sumIssured, decimal factor)
+        public decimal CalculatePremium(int age, string sumIssured, decimal factor)
         {
+            if (age < 0 || string.IsNullOrWhiteSpace(sumIssured))
+            {
+                throw new Exception(message: "Invalid Data");
+            }
             return ((age * Convert.ToDecimal(sumIssured) * factor) / 1000) * 12;
         }
 
-        private decimal GetFactor(string rating, IHostingEnvironment env)
+        public decimal GetFactor(string rating, IHostingEnvironment env)
         {
             string jsonObject = GetJsonData(env, "App_Data\\ratingmap.json");
             var ratings = JsonConvert.DeserializeObject<RatingRoot>(jsonObject);
@@ -55,7 +67,7 @@ namespace CodeTask.API.Services
             return factor;
         }
 
-        private static string GetJsonData(IHostingEnvironment env, string path)
+        public string GetJsonData(IHostingEnvironment env, string path)
         {
             var contentRootPath = env.ContentRootPath;
             var jsonFilePath = System.IO.Path.Combine(contentRootPath, path);
@@ -63,7 +75,7 @@ namespace CodeTask.API.Services
             return jsonObject;
         }
 
-        private string GetRating(string occupation, IHostingEnvironment env)
+        public string GetRating(string occupation, IHostingEnvironment env)
         {
             string jsonObject = GetJsonData(env, "App_Data\\resx.json");
             var occupations = JsonConvert.DeserializeObject<OccupationRoot>(jsonObject);
@@ -72,13 +84,20 @@ namespace CodeTask.API.Services
 
         }
 
-        private int GetYears(string dob)
+        public int GetYears(string dob)
         {
+            if ((string.IsNullOrEmpty(dob)))
+            {
+                throw new ArgumentNullException();
+            }
+
             var dateOfBirth = DateTime.Parse(dob);
             return (DateTime.Today.Year - dateOfBirth.Year);
+
+
+
+
         }
-
-
-
     }
+
 }
