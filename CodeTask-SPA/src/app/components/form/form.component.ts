@@ -3,6 +3,7 @@ import { UserDetails } from '../../models';
 import {FormGroup, FormControl, Validators, FormBuilder} from '@angular/forms';
 import { AuthService } from 'src/app/_services/auth.service';
 import { DropDownModel } from 'src/app/models/DropDownModel';
+import { BsDatepickerModule } from 'ngx-bootstrap';
 
 
 @Component({
@@ -17,9 +18,11 @@ export class FormComponent implements OnInit {
   model: any;
   public dropDownModel: any[] = [];
   public premimumAmt: string;
+  todayDate: Date = new Date();
 
   constructor(private fb: FormBuilder, private authservice: AuthService) {
     this.model = new UserDetails();
+    this.todayDate.setDate(this.todayDate.getDate());
   }
 
   userDetails: UserDetails;
@@ -43,7 +46,7 @@ export class FormComponent implements OnInit {
         Validators.pattern('(?=.*?\\d)^\\$?(([1-9]\\d{0,2}(,\\d{3})*)|\\d+)?(\\.\\d{1,2})?$')]],
         occupation: ['', Validators.required],
         premimumAmt: ['']
-    });
+    }, );
   }
 
   dateOfBirthValidator(g: FormGroup) {

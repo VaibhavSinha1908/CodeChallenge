@@ -29,14 +29,23 @@
   
   <div class="form-group">
     <label for="DateOfBirth">Date of Birth</label>
-    <input type="date" 
+    <input class="form-control"  formControlName="dateOfBirth"
+           bsDatepicker type="text"
+           [ngClass]="{'is-invalid' : registerForm.get('dateOfBirth').errors && registerForm.get('dateOfBirth').touched}"
+           [maxDate]="todayDate">
+    <!-- <input type="date" 
     [ngClass]="{'is-invalid' : registerForm.get('dateOfBirth').errors && registerForm.get('dateOfBirth').touched}"
-    class="form-control"  formControlName="dateOfBirth" placeholder="Select your Date of birth">
+    class="form-control"  formControlName="dateOfBirth" placeholder="Select your Date of birth"> -->
     <div 
       class="invalid-feedback"
       *ngIf="registerForm.get('dateOfBirth').hasError('required') && registerForm.get('dateOfBirth').touched">
       Please enter a valid Date of Birth</div>
-  </div>
+    
+    <div 
+      class="invalid-feedback"
+      *ngIf="registerForm.get('dateOfBirth').hasError('') && registerForm.get('dateOfBirth').touched">
+      Please enter a valid Date of Birth</div>
+    </div>
   
   <div class="form-group">
     <label for="SumInsured">Death - Sum Insured (In A$)</label>

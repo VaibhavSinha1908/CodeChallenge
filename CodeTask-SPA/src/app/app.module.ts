@@ -10,7 +10,8 @@ import { FormComponent } from './components/form/form.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { AuthService } from './_services/auth.service';
-
+import {BsDatepickerModule} from 'ngx-bootstrap';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
    declarations: [
@@ -21,10 +22,12 @@ import { AuthService } from './_services/auth.service';
    ],
    imports: [
       BrowserModule,
+      BrowserAnimationsModule,
       FormsModule,
       ReactiveFormsModule,
       HttpClientModule,
-      AppRoutingModule
+      AppRoutingModule,
+      BsDatepickerModule.forRoot()
    ],
    providers: [
       AuthService
