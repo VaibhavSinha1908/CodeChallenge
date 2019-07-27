@@ -61,8 +61,23 @@ export class FormComponent implements OnInit {
           premimumAmt: data['premiumValue']
         });
     });
+  } else {
+    console.log('form dirty');
+    this.validateAllFields(this.registerForm);
   }
 }
+
+validateAllFields(formGroup: FormGroup) {
+  Object.keys(formGroup.controls).forEach(field => {
+      const control = formGroup.get(field);
+      if (control instanceof FormControl) {
+          control.markAsTouched({ onlySelf: true });
+      } else if (control instanceof FormGroup) {
+          this.validateAllFields(control);
+      }
+  });
+}
+
 }
 
 
