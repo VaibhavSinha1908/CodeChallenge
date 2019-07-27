@@ -25,7 +25,7 @@ System Prerequisites
 Project Structure
 ------------------
 The project is divided into two directories:
-* CodeTask-SPA : a single page application built on Angular.
+* CodeTask-SPA : a single page application built on Angular 8.x.
 * CodeTask.API : a service layer interfacing with the Angular project.
 
 
@@ -48,8 +48,4 @@ Unit test coverage is work in progress.
 
 Work in progress Items
 ---------------------
-The application is in MVP state and some essential aspects are still in development. They are:
- - Service Layer's Unit testing is work in progress.
- - Date of birth field's validation for invalid dates is in progress.
- - Sanitization of the UI layer to stop XSS attacks is in progress.
- - Code refactoring on Web API is in progress.
+None. The application is in production ready state. 
